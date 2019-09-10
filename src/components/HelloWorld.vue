@@ -1,68 +1,103 @@
 <template>
-  <div id="todo-list-example">
-    <form v-on:submit.prevent="addNewToDo">
-      <label for="new-todo">Add a todo</label>
-      <input v-model="newTodoText" id="new-todo" placeholder="Feed the cat" />
-      <button>Add</button>
-    </form>
+  <div class="hello">
+    <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
     <ul>
-      <li
-        is="todo"
-        v-for="(todo, index) in todos"
-        v-bind:key="todo.id"
-        v-bind:title="todo.title"
-        v-on:remove="todos.splice(index, 1)"
-      ></li>
+      <li>
+        <a
+          href="https://vuejs.org"
+          target="_blank"
+        >
+          Core Docs
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://forum.vuejs.org"
+          target="_blank"
+        >
+          Forum
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://chat.vuejs.org"
+          target="_blank"
+        >
+          Community Chat
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://twitter.com/vuejs"
+          target="_blank"
+        >
+          Twitter
+        </a>
+      </li>
+      <br>
+      <li>
+        <a
+          href="http://vuejs-templates.github.io/webpack/"
+          target="_blank"
+        >
+          Docs for This Template
+        </a>
+      </li>
+    </ul>
+    <h2>Ecosystem</h2>
+    <ul>
+      <li>
+        <a
+          href="http://router.vuejs.org/"
+          target="_blank"
+        >
+          vue-router
+        </a>
+      </li>
+      <li>
+        <a
+          href="http://vuex.vuejs.org/"
+          target="_blank"
+        >
+          vuex
+        </a>
+      </li>
+      <li>
+        <a
+          href="http://vue-loader.vuejs.org/"
+          target="_blank"
+        >
+          vue-loader
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/vuejs/awesome-vue"
+          target="_blank"
+        >
+          awesome-vue
+        </a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import todo from "./Todo.vue";
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  },
-  methods: {
-    addNewTodo: function() {
-      this.todos.push({
-        id: this.nextTodoId++,
-        title: this.newTodoText
-      });
-      this.newTodoText = "";
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
     }
-  },
-  data: function() {
-    var todos = new Object();
-    return
-    newTodoText: '',
-      todos[
-        ({
-          id: 1,
-          title: "Do the dishes"
-        },
-        {
-          id: 2,
-          title: " the dishes"
-        },
-        {
-          id: 3,
-          title: "dishes"
-        },
-        {
-          id: 4,
-          title: "es"
-        })
-      ];
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h1, h2 {
+  font-weight: normal;
 }
 ul {
   list-style-type: none;
